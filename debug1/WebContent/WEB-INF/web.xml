@@ -55,6 +55,10 @@
     <error-code>401</error-code>
     <location>/autherror.jsp</location>
   </error-page>
+  <error-page>
+    <error-code>403</error-code>
+    <location>/auth403.jsp</location>
+  </error-page>
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>BasicAuthSimpleTestServlet</web-resource-name>
@@ -78,7 +82,7 @@
 
     <login-config>
         <auth-method>CLIENT-CERT</auth-method>
-        <realm-name>default</realm-name>
+        <realm-name>myrealm</realm-name>
     </login-config>
 
     <servlet>
@@ -92,7 +96,7 @@
 
     <servlet-mapping>
         <servlet-name>BasicAuthSimpleTestServlet</servlet-name>
-        <url-pattern>/secure/</url-pattern>
+        <url-pattern>/secure/*</url-pattern>
     </servlet-mapping>
 
 </web-app>
