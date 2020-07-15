@@ -1,9 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wls:weblogic-web-app xmlns:wls="http://xmlns.oracle.com/weblogic/weblogic-web-app" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd http://xmlns.oracle.com/weblogic/weblogic-web-app http://xmlns.oracle.com/weblogic/weblogic-web-app/1.8/weblogic-web-app.xsd">
+    <wls:weblogic-version>12.2.1</wls:weblogic-version>
+    <wls:context-root>debugKerberos</wls:context-root>
+    <wls:security-role-assignment>
+        <wls:role-name>negotiateAdminRole</wls:role-name>
+        <wls:principal-name>users</wls:principal-name> <!-- WebLogic has implicit group called "users",
+        which all users belong to by default. It's configuration test authetication only.
+        Thus, in this application any authenticated user can access any protected URL.
+        To test authorization, this file must be properly modified.
+         -->
+    </wls:security-role-assignment>
+</wls:weblogic-web-app>
+<!--
 <!DOCTYPE weblogic-web-app PUBLIC "-//BEA Systems, Inc.//DTD Web Application 8.1//EN" "http://www.bea.com/servers/wls810/dtd/weblogic810-web-jar.dtd">
 <weblogic-web-app>
   <security-role-assignment>
     <role-name>negotiateAdminRole</role-name>
-<!--     <principal-name>dhs_weblogic</principal-name> -->
+     <principal-name>dhs_weblogic</principal-name>
     <principal-name>CARES_TEST</principal-name>
     <principal-name>Administrators</principal-name>
   </security-role-assignment>
 </weblogic-web-app>
+-->
