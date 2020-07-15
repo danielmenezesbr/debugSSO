@@ -15,6 +15,7 @@
 # Package Files #
 *.jar
 *.war
+target/*
 !target/debug1-1.war
 *.nar
 *.ear
