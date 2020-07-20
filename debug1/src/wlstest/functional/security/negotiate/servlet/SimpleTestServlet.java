@@ -126,6 +126,7 @@ public class SimpleTestServlet extends HttpServlet
             }
             out.println("</pre>");
         }
+        out.println("<h3><a href=\"../principals.jsp\">Principals</a></h3>");
         out.println("</body></html>");
     }
 
